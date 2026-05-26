@@ -1,0 +1,67 @@
+1. Project Overview / Scope Summary
+Business Requirement
+The Omega Migration initiative aims to onboard and migrate DART support data metrics from Omega source systems to Core source systems as part of the post go-live/cutover onboarding activities.
+Scope Summary
+Migration and remapping of Omega metrics to Core source metrics
+Updates to impacted DART metric tables
+Validation and regression testing for impacted reports and dashboards
+Alignment of metric mappings with business-approved Core logic
+2. Functional Requirements
+You can convert them like this:
+Req ID	Description	Priority
+OMDART-01	System shall update and remap Omega source metrics to Core source metrics across all impacted DART metric tables.	High
+OMDART-02	System shall support updates across 11 impacted DART metric tables as identified in the onboarding scope.	High
+OMDART-03	System shall perform regression testing for all impacted tables and Looker Studio reports.	High
+OMDART-04	System shall maintain existing metric table placeholders for new Core metric mappings.	Medium
+OMDART-05	System shall support onboarding activities during post go-live/cutover migration.	Medium
+3. Tables Affected
+This should become a dedicated subsection instead of raw slide content.
+Example:
+Impacted Tables
+The following DART metric tables will be impacted as part of the Omega migration onboarding activity:
+dart_metrics_product_pc
+dart_metrics_product_additional
+dart_metrics_product_all
+dart_metrics_all
+dart_user_goals
+dart_metric_actuals
+dart_metric_ytd_actuals
+dart_metrics_snapshot_product_pc
+dart_metrics_snapshot_product_additional
+dart_metrics_snapshot_product_all
+dart_metrics_snapshot_all
+(You can keep full paths in appendix if needed.)
+4. Metrics Affected
+This should be a separate table in BRD.
+Sr No	Omega Metric
+1	BROKERED_NET_NEW_EPIC_COUNT
+2	BRANDED_NET_NEW_CMC
+3	BRANDED_NET_WRITTEN_PREMIUM_CMC
+...	...
+You can also add:
+Source Available in Core? (Yes/No)
+Business Signoff Required? (Yes/No)
+That would make the BRD stronger.
+5. Assumptions / Decisions
+Your second slide already fits perfectly into this section.
+Example wording:
+ID	Assumption / Decision
+AS-01	All Omega metrics are expected to have corresponding Core metric counterparts.
+AS-02	Existing metric table placeholders will be reused for new mappings.
+AS-03	Business teams will provide signoff for all finalized metric mappings.
+6. Out of Scope
+ID	Out of Scope Items
+OOS-01	Source data quality issues are excluded from this scope.
+OOS-02	Changes to Core metric logic are not included.
+OOS-03	Structural changes to Looker Studio reports and backend tables are excluded.
+7. Dependencies
+ID	Dependency
+DEP-01	Availability of source tables in GCP datalake
+DEP-02	Receipt of Core logic from business teams
+DEP-03	Product owner signoff on metric mappings
+DEP-04	Business confirmation for unavailable Core metrics
+8. Impact Analysis
+Area	Impact
+Metric Tables	All related metric tables impacted
+Reporting	All impacted Looker Studio reports require validation
+Testing	Regression testing required
