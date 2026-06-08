@@ -1,0 +1,34 @@
+Story Description
+Currently, for the ID Automation process, Carolinas Membership IDs are typically the same as the member's PID. However, users must manually enter the PID as the Carolinas Membership ID for data to flow correctly.
+To reduce manual effort and improve automation, implement logic to automatically populate the Carolinas Membership ID based on the following rules:
+If a BOSS ID is available, use the BOSS ID as the Carolinas Membership ID.
+If a BOSS ID is not available (null/blank), use the PID as the Carolinas Membership ID.
+This enhancement will eliminate the need for manual entry when the Membership ID is equivalent to the PID.
+Business Value
+Reduces manual intervention by the Carolinas team.
+Improves efficiency and accuracy of Membership ID population.
+Supports seamless data flow for ID Automation.
+Acceptance Criteria
+AC1 – Use BOSS ID When Available
+Given a member record contains a valid BOSS ID
+When the ID Automation process runs
+Then the Carolinas Membership ID should be populated with the BOSS ID.
+AC2 – Fallback to PID When BOSS ID Is Missing
+Given a member record does not contain a BOSS ID (null or blank)
+When the ID Automation process runs
+Then the Carolinas Membership ID should be populated with the PID.
+AC3 – Data Flow Validation
+Given the Carolinas Membership ID is populated using either BOSS ID or PID
+When the downstream process executes
+Then the record should successfully flow through the system without requiring manual intervention.
+AC4 – Regression Validation
+Given existing records with populated BOSS IDs
+When the enhancement is deployed
+Then existing functionality should remain unchanged and continue using BOSS IDs as the primary source.
+Technical Notes
+Source Priority:
+BOSS ID
+PID (fallback)
+Apply logic only when populating Carolinas Membership ID.
+Ensure null and blank BOSS ID values are handled consistently.
+Story Points: 3 (or as per your team's estimation process)
